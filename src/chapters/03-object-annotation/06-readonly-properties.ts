@@ -9,7 +9,7 @@
 
 {
   type Member = {
-    id: string;
+    readonly id: string; // read / write
     name: string;
     age: number;
     job?: string;
@@ -23,7 +23,7 @@
     isAdmin: false,
   };
 
-  guest.id = 'administrator-ze82Kd';
+  // guest.id = 'administrator-ze82Kd';
 
   const administrator: Member = {
     id: 'administrator-ze82Kd',
@@ -32,5 +32,5 @@
     isAdmin: true,
   };
 
-  administrator.id = 'guest-101';
+  // administrator.id = 'guest-101';
 }

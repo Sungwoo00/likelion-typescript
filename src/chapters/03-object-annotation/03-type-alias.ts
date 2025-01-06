@@ -62,16 +62,15 @@
 // 아래 코드에 반복 사용된 객체 에너테이션을 타입 별칭을 활용하는 코드로 변경해봅니다.
 
 {
-  let point: { x: number; y: number } = { x: 10, y: 10 };
+  type Point = { x: number; y: number };
 
-  const generatePoint = (x: number, y: number): { x: number; y: number } => {
+  let point: Point = { x: 10, y: 10 };
+
+  const generatePoint = (x: number, y: number): Point => {
     return { x, y };
   };
 
-  const powPoint = (porint: {
-    x: number;
-    y: number;
-  }): { x: number; y: number } => {
+  const powPoint = (point: Point): Point => {
     return {
       x: point.x ** 2,
       y: point.y ** 2,

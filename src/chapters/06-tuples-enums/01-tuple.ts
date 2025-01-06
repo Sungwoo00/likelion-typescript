@@ -30,7 +30,7 @@
 // HTTP_Response 타입이 정상적으로 작동되도록 타입을 지정합니다.
 
 {
-  type HTTP_Response = [];
+  type HTTP_Response = [200 | 404, 'OK' | 'NOT FOUND'];
 
   const SUCCESS: HTTP_Response = [200, 'OK'];
   const NOT_FOUND: HTTP_Response = [404, 'NOT FOUND'];

@@ -7,17 +7,12 @@
 // ---------------------------------------------------------------------------------
 
 {
-  const sendGreeting = (
-    toName: string,
-    fromName: string,
-    isMorning: boolean,
-    currentYear: number
-  ) => {
+  const sendGreeting = (toName: string, fromName: string, isMorning: boolean, currentYear: number) => {
     let thisTime = isMorning ? '오전' : '오후';
     return `안녕 ${toName}! 좋은 ${thisTime}이 되길 바라. 행복한 ${currentYear} 한 해가 되길! - 당신의 ${fromName}`;
   };
 
   // toName을 제외한 매개변수의 기본 값을 설정해 아래 오류가 발생하지 않도록 합니다.
-  sendGreeting('상우');
-  sendGreeting('제인');
+  sendGreeting('상우', '성우', false, 2025);
+  sendGreeting('제인', '성우', true, new Date().getFullYear());
 }

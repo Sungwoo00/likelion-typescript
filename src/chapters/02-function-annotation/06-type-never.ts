@@ -10,7 +10,7 @@
 
 {
   // 실행(executing)이 완료되지 않는 함수
-  function neverStop() {
+  function neverStop(): never {
     while (true) {
       console.log('절대 멈추지 않겠습니다!');
     }
@@ -26,13 +26,12 @@
   // 함수의 용도(기능)과 달리 오류가 발생하지 않는 이유는 무엇일까요?
   // 아래 함수가 문제가 있음을 오류가 발생하도록 설정해봅니다.
 
-  const throwError = (message: string) => {
-    return undefined;
+  const throwError = (message: string): never => {
+    // return undefined;
     throw new Error(message);
   };
 
-  function gameLoop() {
+  function gameLoop(): never {
     while (true) console.log('무슨 소리! 아직 게임은 끝나지 않았다!');
-    return true;
   }
 }

@@ -14,6 +14,12 @@
     y: number;
   };
 
+  // Interface
+  interface PointTwo {
+    x: number;
+    y: number;
+  }
+
   let pointOne: Point = { x: 10, y: 0 };
   let pointTwo: Point = { x: -10, y: -5 };
 }
@@ -21,11 +27,17 @@
 // Person 타입을 인터페이스로 변경해봅니다.
 
 {
-  type Person = {
-    name: string;
+  // type Person = {
+  //   name: string;
+  //   age: number;
+  //   gender: '남성' | '여성';
+  // };
+
+  interface Person {
+    readonly name: string;
     age: number;
-    gender: '남성' | '여성';
-  };
+    gender?: '남성' | '여성';
+  }
 
   const sayHappyBirthDay = (person: Person): string => {
     return `${person.name}! ${person.age} 번째 생일을 생일 축하해! 🎉`;

@@ -26,9 +26,9 @@
 
   // 함수에 직접 전달하는 객체 리터럴의 경우, 타입 검사에 걸려 오류가 발생합니다.
   printGender({
-    name: '현민성',
+    // name: '현민성',
     gender: '남성',
-    age: 29,
+    // age: 29,
   });
 
   const minsung = {

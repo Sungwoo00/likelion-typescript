@@ -9,24 +9,40 @@
 // 특정 타입만 허용하는 배열 에너테이션을 지정합니다.
 
 {
-  const numberTypedArray = [10, 101, 201, 301];
+  const numberTypedArray: Array<number> = [10, 101, 201, 301];
 
   let total = numberTypedArray.reduce((total, value) => value + total, 0);
   console.log(total);
 
-  numberTypedArray.push('901');
+  numberTypedArray.push(+'901', 2, 32, 5, 1, 8, 11);
 
-  const stringTypedArray =
-    'annotation, inference, intersection, type alias'.split(',');
+  const stringTypedArray = 'annotation, inference, intersection, type alias'.split(',');
   console.log(stringTypedArray.length);
 
-  stringTypedArray.unshift(true);
+  stringTypedArray.unshift(true + '');
 }
 
 // booksApi 타입 별칭을 선언해봅니다.
 
 {
-  type BooksAPI = {};
+  type Image = {
+    width: number;
+    src: string;
+  };
+
+  type DataItem = {
+    readonly id: string;
+    title: string;
+    author: string;
+    image: Image;
+    price: number;
+  };
+
+  type BooksAPI = {
+    version: string;
+    author: string;
+    data: DataItem[];
+  };
 
   const booksApi: BooksAPI = {
     version: '0.0.2',

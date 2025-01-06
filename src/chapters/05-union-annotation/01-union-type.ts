@@ -10,7 +10,7 @@
 
 {
   type Product = {
-    readonly id: string;
+    readonly id: string | number;
   };
 
   const basket: Product = {
@@ -25,17 +25,22 @@
 // coordinate 타입이 Point 또는 Location 중 하나를 허용하도록 설정합니다.
 
 {
-  type Point = {
-    x: number;
-    y: number;
-  };
+  type Point =
+    | {
+        x: number;
+        y: number;
+      }
+    | {
+        latitude: number;
+        longitude: number;
+      };
 
   type Location = {
     latitude: number;
     longitude: number;
   };
 
-  let coordinate = { x: 100, y: -201 };
+  let coordinate: Point = { x: 100, y: -201 };
 
   coordinate = {
     latitude: 920.23,

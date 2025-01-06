@@ -11,7 +11,7 @@
   interface Person {
     name: string;
     age: number;
-    gender: '남성' | '여성';
+    gender?: '남성' | '여성';
   }
 
   const sayHappyBirthDay = (person: Person): string => {

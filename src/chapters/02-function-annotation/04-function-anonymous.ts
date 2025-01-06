@@ -18,7 +18,9 @@
 
   // 타입 에너테이션을 지정하지 않아도 오류가 발생하는 이유
   // 익명 함수와 타입 추론
-  colors = colors.map((color) => {
-    return color.join(' - ');
-  });
+  const colorsWithSeperator = colors
+    .map((color) => {
+      return color;
+    })
+    .join(' - ');
 }

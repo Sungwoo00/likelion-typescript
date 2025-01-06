@@ -8,14 +8,14 @@
 // MultiDimensionalTypedArray 에너테이션을 설정합니다.
 
 {
-  type MultiDimensionalTypedArray = [];
+  type MultiDimensionalTypedArray = [string, string][];
+  // type MultiDimensionalTypedArray = Array<[string, string]>;
 
   type User = {
     readonly name: string;
     gender: string;
     job?: string;
   };
-
   const objectToIterator: MultiDimensionalTypedArray = [
     ['name', '황수진'],
     ['gender', '여성'],
@@ -28,19 +28,14 @@
     job: '디자이너',
   };
 
-  const whangSujinIterator: MultiDimensionalTypedArray =
-    Object.entries(whangSujin);
+  const whangSujinIterator: MultiDimensionalTypedArray = Object.entries(whangSujin);
 }
 
 // MultiDimensionalNumbers 에너테이션을 설정합니다.
 // MultiDimensionalNumbers 에너테이션을 Array<> 문법으로 변경합니다.
 
 {
-  type MultiDimensionalNumbers = number[];
-
-  const numbers: MultiDimensionalNumbers = [
-    [[101, 201]],
-    [[301]],
-    [[401, 501]],
-  ];
+  // type MultiDimensionalNumbers = number[][][];
+  type MultiDimensionalNumbers = Array<Array<Array<number>>>;
+  const numbers: MultiDimensionalNumbers = [[[101, 201]], [[301]], [[401, 501]]];
 }

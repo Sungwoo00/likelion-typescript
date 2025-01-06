@@ -9,7 +9,7 @@
 // 오류가 더 이상 발생하지 않으면? 이어서 Array<> 문법으로 대체해봅니다.
 
 {
-  type MultiDimensionalTypedArray = string[][];
+  type MultiDimensionalTypedArray = (string | number)[][];
 
   type User = {
     readonly name: string;
@@ -25,14 +25,14 @@
     age: 26,
   };
 
-  const whangSujinIterator: MultiDimensionalTypedArray =
-    Object.entries(whangSujin);
+  const whangSujinIterator: MultiDimensionalTypedArray = Object.entries(whangSujin);
 }
 
 // 아래 작성된 에너테이션과 먼저 작성한 에너테이션은 어떤 차이점이 있을까요?
 
 {
-  type CountDown = string[] | number[];
+  // type CountDown = string[] | number[];
+  type CountDown = (string | number)[];
 
   let countdown: CountDown = ['three', 'two', 'one'];
   countdown = [3, 2, 1];
@@ -45,6 +45,9 @@
 {
   type Point = { x: number; y: number };
   type Location = { rat: number; lon: number };
+
+  type Coordinates = (Point | Location)[];
+  // type Coordinates = Array<Point | Location>;
 
   const coords = [
     { x: 8, y: -12 },

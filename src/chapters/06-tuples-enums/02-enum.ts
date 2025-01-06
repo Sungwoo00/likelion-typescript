@@ -12,6 +12,14 @@
   // HTTP_Responses
   // SUCCESS → 1
   // NOT_FOUND → 2
+
+  enum HTTP_Response {
+    SUCCESS = 200,
+    NOT_FOUND = 404,
+  }
+
+  HTTP_Response.SUCCESS;
+  HTTP_Response.NOT_FOUND;
 }
 
 // KEYCODE 숫자 열거형 타입으로 작성합니다.
@@ -22,6 +30,18 @@
   // RIGHT → 39
   // UP → 38
   // DOWN → 40
+
+  enum KEYCODE {
+    LEFT = 37,
+    RIGHT = 39,
+    UP = 38,
+    DOWN = 40,
+  }
+
+  KEYCODE.UP;
+  KEYCODE.DOWN;
+  KEYCODE.LEFT;
+  KEYCODE.RIGHT;
 }
 
 // Task 문자 열거형 타입으로 작성합니다.
@@ -32,17 +52,34 @@
   // READ → 'task/read'
   // EDIT → 'task/edit'
   // DELETE → 'task/delete'
+
+  enum Task {
+    ADD = 'task/add',
+    READ = 'task/read',
+    EDIT = 'task/edit',
+    DELETE = 'task/delete',
+  }
+
+  Task.ADD;
+  Task.READ;
+  Task.EDIT;
+  Task.DELETE;
 }
 
 // OrderStatus 열거형 타입의 값을 숫자 또는 문자로 정의해봅니다.
 
 {
   enum OrderStatus {
-    PENDING, //  → 1 or 'order/pending'
-    SHIPPED, //  → '2 or 'order/shipped'
-    DELIVERED, //  → 3 or 'order/delivered'
-    RETURNED, //  → 4 or 'order/returned'
+    PENDING = 'order/pending',
+    SHIPPED = 'order/shipped',
+    DELIVERED = 'order/delivered',
+    RETURNED = 'order/returned',
   }
+
+  OrderStatus.PENDING;
+  OrderStatus.SHIPPED;
+  OrderStatus.DELIVERED;
+  OrderStatus.RETURNED;
 
   const isDelivered = (order: OrderStatus) => {
     return order === OrderStatus.DELIVERED;

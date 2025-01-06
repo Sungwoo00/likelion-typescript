@@ -14,22 +14,13 @@
     age: number;
   };
 
-  type Worker = {
-    readonly id: string;
-    name: string;
-    age: number;
+  type Worker = User & {
     job: string;
     role: string;
     career: number;
   };
 
-  type Member = {
-    readonly id: string;
-    name: string;
-    age: number;
-    job: string;
-    role: string;
-    career: number;
+  type Member = Worker & {
     isAdmin: boolean;
   };
 
